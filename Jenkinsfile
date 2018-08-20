@@ -37,7 +37,7 @@ pipeline {
                  steps {
                        input('Do you want to proceed with Dev deployment?')
                        bat 'RENAME C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\target\\Demo-1.0.war Demo.war'
-                       bat 'copy C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\target\\Pipeline.war D:\\Software\\apache-tomee-plus-7.0.2\\webapps\\'
+                       bat 'copy C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\target\\Pipeline.war D:\\Essentials\\apache-tomee-plus-7.0.5\\webapps\\'
                        echo "Dev Deployment Successful!!"
                            }
                  }
