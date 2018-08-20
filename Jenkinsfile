@@ -22,7 +22,7 @@ pipeline {
                           mavenLocalRepo: 'C:\\Users\\330406\\.m2\\repository') {
 
                            // Run the maven build
-                           bat 'cd C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\'
+                           //bat 'cd C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\'
                            bat 'mvn clean package'
 
                       }   
@@ -36,8 +36,8 @@ pipeline {
                  stage('Dev Deployment') {
                  steps {
                        input('Do you want to proceed with Dev deployment?')
-                       bat 'RENAME C:\\Users\\330406\\.jenkins\\workspace\\Pipeline\\target\\Pipeline-1.0.war Pipeline.war'
-                       bat 'copy C:\\Users\\330406\\.jenkins\\workspace\\Pipeline\\target\\Pipeline.war D:\\Software\\apache-tomee-plus-7.0.2\\webapps\\'
+                       bat 'RENAME C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\target\\Demo-1.0.war Demo.war'
+                       bat 'copy C:\\Users\\330406\\.jenkins\\workspace\\Demo\\Demo\\target\\Pipeline.war D:\\Software\\apache-tomee-plus-7.0.2\\webapps\\'
                        echo "Dev Deployment Successful!!"
                            }
                  }
