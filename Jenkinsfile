@@ -44,13 +44,13 @@ pipeline {
                  }
                  stage('Testing') {
                  steps {
-                         input('Do you want to proceed with Dev deployment?') 
+                         input('Do you want to proceed with Testing?') 
                          echo "Testing Successful!!"
                            }
                  }
                  stage('Prod Deployment') {
                  steps {
-                         input('Do you want to proceed with Dev deployment?')
+                         input('Do you want to proceed with Production deployment?')
                          echo "Production Deployment Successful!!"
                            }
                  }
