@@ -5,7 +5,7 @@ pipeline {
                  steps {
                     input('Do you want to proceed?')
                     withSonarQubeEnv('Sonar') {
-                    requires SonarQube Scanner for Maven 3.2+
+                    //requires SonarQube Scanner for Maven 3.2+
                     bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                         }
                      }         
