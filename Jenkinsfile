@@ -1,15 +1,15 @@
 pipeline {
          agent any
          stages {
-                 //stage('SonarQube Analysis') {
-                 //steps {
-                  //  input('Do you want to proceed?')
-                 //   withSonarQubeEnv('Sonar') {
-                    // requires SonarQube Scanner for Maven 3.2+
-                 //   bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-                  //      }
-                  //   }         
-               //  }
+                 stage('SonarQube Analysis') {
+                 steps {
+                    input('Do you want to proceed?')
+                    withSonarQubeEnv('Sonar') {
+                    requires SonarQube Scanner for Maven 3.2+
+                    bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+                        }
+                     }         
+                 }
                  stage('Code Build') {
                  steps     {
                        input('Do you want to proceed with build & war creation?')
@@ -44,12 +44,14 @@ pipeline {
                  }
                  stage('Testing') {
                  steps {
+                         input('Do you want to proceed with Dev deployment?') 
                          echo "Testing Successful!!"
                            }
                  }
                  stage('Prod Deployment') {
                  steps {
-                       echo "Production Deployment Successful!!"
+                         input('Do you want to proceed with Dev deployment?')
+                         echo "Production Deployment Successful!!"
                            }
                  }
          }
