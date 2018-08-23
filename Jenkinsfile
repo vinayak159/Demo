@@ -9,10 +9,11 @@ pipeline {
                     bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                         }
                      }         
-                 }
+                  }
                   stage("SonarQube Quality Gate") { 
                   steps {
-                    timeout(time: 5, unit: 'MINUTES') { 
+                    input('Do you want to proceed?')       
+                    timeout(time: 1, unit: 'MINUTES') { 
                     waitForQualityGate abortPipeline: true
                      }        
                    }
